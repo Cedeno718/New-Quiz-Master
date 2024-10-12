@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70e08ba9f4204a83a9b8c007ee817cb, type: 3}
   m_Name: Question 2
   m_EditorClassIdentifier: 
-  question: What kind of wood is Harry's first wand made out of?
+  question: What is the incantation used to summon the Dark Mark?
+  answers:
+  - Morsmordre
+  - Serpensortia
+  - Crucio
+  - Imperio
+  CorrectAnswerIndex: 0

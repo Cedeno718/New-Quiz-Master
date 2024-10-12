@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70e08ba9f4204a83a9b8c007ee817cb, type: 3}
   m_Name: Question 4
   m_EditorClassIdentifier: 
-  question: What year was The Goblet of Fire published?
+  question: Who killed Sirius Black?
+  answers:
+  - 'Lord Voldemort  '
+  - 'Bellatrix Lestrange  '
+  - 'Draco Malfoy  '
+  - Peter Pettigrew
+  CorrectAnswerIndex: 1
