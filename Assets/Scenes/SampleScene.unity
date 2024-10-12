@@ -240,6 +240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: {fileID: 1084968753}
   question: {fileID: 11400000, guid: 290c1123db3144c3bb7f6efeddbd1073, type: 2}
+  answerButtons:
+  - {fileID: 737446985}
+  - {fileID: 752532415}
+  - {fileID: 1362859963}
+  - {fileID: 504199329}
 --- !u!1 &349781818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1542,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 276.2, y: 99.8}
+  m_CellSize: {x: 363.7, y: 99.8}
   m_Spacing: {x: 71.9, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 2
