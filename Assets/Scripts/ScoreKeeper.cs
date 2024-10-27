@@ -11,7 +11,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         return correctAnswers;
     }
-    
+
     public void IncrementCorrectAnswers()
     {
         correctAnswers++;
@@ -19,7 +19,7 @@ public class ScoreKeeper : MonoBehaviour
 
     public int GetQuestionSeen()
     {
-       return questionsSeen; 
+        return questionsSeen;
     }
 
     public void IncrementQuestionsSeen()
@@ -29,6 +29,6 @@ public class ScoreKeeper : MonoBehaviour
 
     public int CalculateScore()
     {
-        return Mathf.RoundToInt(correctAnswers / (float)questionsSeen * 100); 
+        return Mathf.RoundToInt(correctAnswers / (float)questionsSeen * 100);
     }
 }

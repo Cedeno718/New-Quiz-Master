@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class EndScreen : MonoBehaviour
 {
-   [SerializeField] TextMeshProUGUI finalScoreText;
-   ScoreKeeper scoreKeeper;
-    void Start()
+    [SerializeField] TextMeshProUGUI finalScoreText;
+    ScoreKeeper scoreKeeper;
+
+    void Awake()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     public void ShowFinalScore()
     {
-        finalScoreText.text = "Congrats, \n Your score is: " +
+        finalScoreText.text = "Congrats!\nYou scored a " + 
                                 scoreKeeper.CalculateScore() + "%";
     }
 }
+

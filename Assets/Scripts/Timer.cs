@@ -9,7 +9,8 @@ public class Timer : MonoBehaviour
 
     public bool loadNextQuestion;
     public float fillFraction;
-    public bool isAnsweringQuestion = false;
+    public bool isAnsweringQuestion;
+    
     float timerValue;
 
     void Update()
@@ -21,16 +22,16 @@ public class Timer : MonoBehaviour
     {
         timerValue = 0;
     }
+
     void UpdateTimer()
     {
         timerValue -= Time.deltaTime;
-        
+
         if(isAnsweringQuestion)
         {
             if(timerValue > 0)
             {
-                fillFraction = timerValue / timeToCompleteQuestion; 
-            
+                fillFraction = timerValue / timeToCompleteQuestion;
             }
             else
             {
@@ -43,7 +44,6 @@ public class Timer : MonoBehaviour
             if(timerValue > 0)
             {
                 fillFraction = timerValue / timeToShowCorrectAnswer;
-
             }
             else
             {
@@ -52,8 +52,6 @@ public class Timer : MonoBehaviour
                 loadNextQuestion = true;
             }
         }
-
-        Debug.Log(isAnsweringQuestion + ": " + timerValue + " = " + fillFraction);
     }
 }
 
