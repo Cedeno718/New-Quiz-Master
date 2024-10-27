@@ -35,6 +35,7 @@ public class Quiz : MonoBehaviour
 
     void Awake()
     {
+        hasAnsweredEarly = false;
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         progressBar.maxValue = questions.Count;
@@ -56,7 +57,7 @@ public class Quiz : MonoBehaviour
             GetNextQuestion();
             timer.loadNextQuestion = false;
         }
-        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
+        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion && currentQuestion != null)
         {
             DisplayAnswer(-1);
             SetButtonState(false);
@@ -96,6 +97,7 @@ public class Quiz : MonoBehaviour
     {
         if (questions.Count > 0)
         {
+            hasAnsweredEarly = false;
             SetButtonState(true);
             SetDefaultButtonSprites();
             GetRandomQuestion();

@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
     public void CancelTimer()
     {
         timerValue = 0;
+
     }
 
     void UpdateTimer()
