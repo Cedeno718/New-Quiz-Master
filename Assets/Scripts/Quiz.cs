@@ -35,11 +35,16 @@ public class Quiz : MonoBehaviour
 
     void Awake()
     {
-        hasAnsweredEarly = false;
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         progressBar.maxValue = questions.Count;
         progressBar.value = 0;
+    }
+
+    float timerValue;
+    {
+        timerValue = 0;
+
     }
 
     void Update()
@@ -57,10 +62,10 @@ public class Quiz : MonoBehaviour
             GetNextQuestion();
             timer.loadNextQuestion = false;
         }
-        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion && currentQuestion != null)
+        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
         {
             DisplayAnswer(-1);
-            SetButtonState(false);
+            SetButtonState(false); 
         }
     }
 
@@ -87,7 +92,7 @@ public class Quiz : MonoBehaviour
         {
             correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();
             string correctAnswer = currentQuestion.GetAnswer(correctAnswerIndex);
-            questionText.text = "Sorry, the correct answer was;\n" + correctAnswer;
+            questionText.text = "Whoops! >.<' the right answer is ;\n" + correctAnswer;
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
         }
@@ -97,7 +102,6 @@ public class Quiz : MonoBehaviour
     {
         if (questions.Count > 0)
         {
-            hasAnsweredEarly = false;
             SetButtonState(true);
             SetDefaultButtonSprites();
             GetRandomQuestion();
@@ -147,4 +151,5 @@ public class Quiz : MonoBehaviour
         }
     }
 }
+
 
